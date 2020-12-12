@@ -1,0 +1,32 @@
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Application\bin\Debug\netcoreapp3.1\WebAPI.Application.deps.json
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Application\bin\Debug\netcoreapp3.1\WebAPI.Application.dll
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Application\bin\Debug\netcoreapp3.1\WebAPI.Application.pdb
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Application\bin\Debug\netcoreapp3.1\WebAPI.Data.dll
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Application\bin\Debug\netcoreapp3.1\WebAPI.Utilities.dll
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Application\bin\Debug\netcoreapp3.1\WebAPI.ViewModels.dll
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Application\bin\Debug\netcoreapp3.1\WebAPI.Data.pdb
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Application\bin\Debug\netcoreapp3.1\WebAPI.Utilities.pdb
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Application\bin\Debug\netcoreapp3.1\WebAPI.ViewModels.pdb
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Application\obj\Debug\netcoreapp3.1\WebAPI.Application.csprojAssemblyReference.cache
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Application\obj\Debug\netcoreapp3.1\WebAPI.Application.AssemblyInfoInputs.cache
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Application\obj\Debug\netcoreapp3.1\WebAPI.Application.AssemblyInfo.cs
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Application\obj\Debug\netcoreapp3.1\WebAPI.Application.csproj.CoreCompileInputs.cache
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Application\obj\Debug\netcoreapp3.1\WebAPI.Application.csproj.CopyComplete
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Application\obj\Debug\netcoreapp3.1\WebAPI.Application.dll
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Application\obj\Debug\netcoreapp3.1\WebAPI.Application.pdb
+C:\Users\Truong08\Desktop\New folder\WebAPI.Application\bin\Debug\netcoreapp3.1\WebAPI.Application.deps.json
+C:\Users\Truong08\Desktop\New folder\WebAPI.Application\bin\Debug\netcoreapp3.1\WebAPI.Application.dll
+C:\Users\Truong08\Desktop\New folder\WebAPI.Application\bin\Debug\netcoreapp3.1\WebAPI.Application.pdb
+C:\Users\Truong08\Desktop\New folder\WebAPI.Application\bin\Debug\netcoreapp3.1\WebAPI.Data.dll
+C:\Users\Truong08\Desktop\New folder\WebAPI.Application\bin\Debug\netcoreapp3.1\WebAPI.Utilities.dll
+C:\Users\Truong08\Desktop\New folder\WebAPI.Application\bin\Debug\netcoreapp3.1\WebAPI.ViewModels.dll
+C:\Users\Truong08\Desktop\New folder\WebAPI.Application\bin\Debug\netcoreapp3.1\WebAPI.Data.pdb
+C:\Users\Truong08\Desktop\New folder\WebAPI.Application\bin\Debug\netcoreapp3.1\WebAPI.Utilities.pdb
+C:\Users\Truong08\Desktop\New folder\WebAPI.Application\bin\Debug\netcoreapp3.1\WebAPI.ViewModels.pdb
+C:\Users\Truong08\Desktop\New folder\WebAPI.Application\obj\Debug\netcoreapp3.1\WebAPI.Application.csprojAssemblyReference.cache
+C:\Users\Truong08\Desktop\New folder\WebAPI.Application\obj\Debug\netcoreapp3.1\WebAPI.Application.AssemblyInfoInputs.cache
+C:\Users\Truong08\Desktop\New folder\WebAPI.Application\obj\Debug\netcoreapp3.1\WebAPI.Application.AssemblyInfo.cs
+C:\Users\Truong08\Desktop\New folder\WebAPI.Application\obj\Debug\netcoreapp3.1\WebAPI.Application.csproj.CopyComplete
+C:\Users\Truong08\Desktop\New folder\WebAPI.Application\obj\Debug\netcoreapp3.1\WebAPI.Application.dll
+C:\Users\Truong08\Desktop\New folder\WebAPI.Application\obj\Debug\netcoreapp3.1\WebAPI.Application.pdb
+C:\Users\Truong08\Desktop\New folder\WebAPI.Application\obj\Debug\netcoreapp3.1\WebAPI.Application.csproj.CoreCompileInputs.cache
