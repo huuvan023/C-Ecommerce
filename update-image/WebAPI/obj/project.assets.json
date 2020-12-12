@@ -6319,11 +6319,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI\\WebAPI.csproj",
+      "projectPath": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\Truong08\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI\\obj\\",
+      "outputPath": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6342,8 +6342,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.ApiIntegration\\WebAPI.ApiIntegration.csproj": {
-              "projectPath": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.ApiIntegration\\WebAPI.ApiIntegration.csproj"
+            "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.ApiIntegration\\WebAPI.ApiIntegration.csproj": {
+              "projectPath": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.ApiIntegration\\WebAPI.ApiIntegration.csproj"
             }
           }
         }

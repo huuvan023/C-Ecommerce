@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.Data\\WebAPI.Data.csproj": {}
+    "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.Data\\WebAPI.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.Data\\WebAPI.Data.csproj": {
+    "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.Data\\WebAPI.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.Data\\WebAPI.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.Data\\WebAPI.Data.csproj",
         "projectName": "WebAPI.Data",
-        "projectPath": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.Data\\WebAPI.Data.csproj",
+        "projectPath": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.Data\\WebAPI.Data.csproj",
         "packagesPath": "C:\\Users\\Truong08\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.Data\\obj\\",
+        "outputPath": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,11 +30,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.Utilities\\WebAPI.Utilities.csproj": {
-                "projectPath": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.Utilities\\WebAPI.Utilities.csproj"
+              "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.Utilities\\WebAPI.Utilities.csproj": {
+                "projectPath": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.Utilities\\WebAPI.Utilities.csproj"
               },
-              "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.ViewModels\\WebAPI.ViewModels.csproj": {
-                "projectPath": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.ViewModels\\WebAPI.ViewModels.csproj"
+              "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.ViewModels\\WebAPI.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.ViewModels\\WebAPI.ViewModels.csproj"
               }
             }
           }
@@ -103,14 +103,14 @@
         }
       }
     },
-    "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.Utilities\\WebAPI.Utilities.csproj": {
+    "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.Utilities\\WebAPI.Utilities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.Utilities\\WebAPI.Utilities.csproj",
+        "projectUniqueName": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.Utilities\\WebAPI.Utilities.csproj",
         "projectName": "WebAPI.Utilities",
-        "projectPath": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.Utilities\\WebAPI.Utilities.csproj",
+        "projectPath": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.Utilities\\WebAPI.Utilities.csproj",
         "packagesPath": "C:\\Users\\Truong08\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.Utilities\\obj\\",
+        "outputPath": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.Utilities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -161,14 +161,14 @@
         }
       }
     },
-    "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.ViewModels\\WebAPI.ViewModels.csproj": {
+    "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.ViewModels\\WebAPI.ViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.ViewModels\\WebAPI.ViewModels.csproj",
+        "projectUniqueName": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.ViewModels\\WebAPI.ViewModels.csproj",
         "projectName": "WebAPI.ViewModels",
-        "projectPath": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.ViewModels\\WebAPI.ViewModels.csproj",
+        "projectPath": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.ViewModels\\WebAPI.ViewModels.csproj",
         "packagesPath": "C:\\Users\\Truong08\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.ViewModels\\obj\\",
+        "outputPath": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.ViewModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

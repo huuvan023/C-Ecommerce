@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y1Hopzq9HWLsnlPu/7QGczQhuX90RvgTAi29KWxDOW3pnysEucDEJdYQy1ZI9priajuVu3Cqko5sXGjWnr74AA==",
+  "dgSpecHash": "2vRok3qbsnUOvKzQuiyHqXFX5NwNY3dZGzUbgJO1fxZqtTorYDzdb065GumrQ2r69BObwEQSOjECrypD2s2Omg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.Utilities\\WebAPI.Utilities.csproj",
+  "projectFilePath": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.Utilities\\WebAPI.Utilities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Truong08\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Truong08\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

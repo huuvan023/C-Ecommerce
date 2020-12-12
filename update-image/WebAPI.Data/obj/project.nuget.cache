@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MQRJx3q2pKfwQszIazfc958Vjvk/KqmkeWwvy/c+wrWzh0RI2kR0x/HIMzr0M2mjdPSvEc6aRD7f5LEXrVzI/w==",
+  "dgSpecHash": "Oxb1SjRAoVw+0rAW4IGWLJoy2WgcG4w2JyZYQLBFush059rW/TyLSpI12O2oy8XS+xFz6UXJc7tsMYuMZD/Rjg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.Data\\WebAPI.Data.csproj",
+  "projectFilePath": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.Data\\WebAPI.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Truong08\\.nuget\\packages\\fluentvalidation\\9.3.0\\fluentvalidation.9.3.0.nupkg.sha512",
     "C:\\Users\\Truong08\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.3.0\\fluentvalidation.aspnetcore.9.3.0.nupkg.sha512",

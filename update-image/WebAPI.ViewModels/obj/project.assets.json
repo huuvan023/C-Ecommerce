@@ -227,11 +227,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.ViewModels\\WebAPI.ViewModels.csproj",
+      "projectUniqueName": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.ViewModels\\WebAPI.ViewModels.csproj",
       "projectName": "WebAPI.ViewModels",
-      "projectPath": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.ViewModels\\WebAPI.ViewModels.csproj",
+      "projectPath": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.ViewModels\\WebAPI.ViewModels.csproj",
       "packagesPath": "C:\\Users\\Truong08\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.ViewModels\\obj\\",
+      "outputPath": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.ViewModels\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

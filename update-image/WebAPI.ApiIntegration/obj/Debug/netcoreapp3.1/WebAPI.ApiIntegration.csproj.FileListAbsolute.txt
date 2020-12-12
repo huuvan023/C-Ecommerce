@@ -12,3 +12,17 @@ C:\Users\Truong08\Desktop\New folder\WebAPI.ApiIntegration\bin\Debug\netcoreapp3
 C:\Users\Truong08\Desktop\New folder\WebAPI.ApiIntegration\obj\Debug\netcoreapp3.1\WebAPI.ApiIntegration.csproj.CoreCompileInputs.cache
 C:\Users\Truong08\Desktop\New folder\WebAPI.ApiIntegration\obj\Debug\netcoreapp3.1\WebAPI.ApiIntegration.dll
 C:\Users\Truong08\Desktop\New folder\WebAPI.ApiIntegration\obj\Debug\netcoreapp3.1\WebAPI.ApiIntegration.pdb
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ApiIntegration\bin\Debug\netcoreapp3.1\WebAPI.ApiIntegration.deps.json
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ApiIntegration\bin\Debug\netcoreapp3.1\WebAPI.ApiIntegration.dll
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ApiIntegration\bin\Debug\netcoreapp3.1\WebAPI.ApiIntegration.pdb
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ApiIntegration\bin\Debug\netcoreapp3.1\WebAPI.Utilities.dll
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ApiIntegration\bin\Debug\netcoreapp3.1\WebAPI.ViewModels.dll
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ApiIntegration\bin\Debug\netcoreapp3.1\WebAPI.Utilities.pdb
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ApiIntegration\bin\Debug\netcoreapp3.1\WebAPI.ViewModels.pdb
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ApiIntegration\obj\Debug\netcoreapp3.1\WebAPI.ApiIntegration.csprojAssemblyReference.cache
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ApiIntegration\obj\Debug\netcoreapp3.1\WebAPI.ApiIntegration.AssemblyInfoInputs.cache
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ApiIntegration\obj\Debug\netcoreapp3.1\WebAPI.ApiIntegration.AssemblyInfo.cs
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ApiIntegration\obj\Debug\netcoreapp3.1\WebAPI.ApiIntegration.csproj.CoreCompileInputs.cache
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ApiIntegration\obj\Debug\netcoreapp3.1\WebAPI.ApiIntegration.csproj.CopyComplete
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ApiIntegration\obj\Debug\netcoreapp3.1\WebAPI.ApiIntegration.dll
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ApiIntegration\obj\Debug\netcoreapp3.1\WebAPI.ApiIntegration.pdb

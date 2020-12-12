@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+cH9MD+8NzAyPbZh5/4+IXNX+zxE7WDyQQCTOmkSYlLWxPkYdDKQfPaoVZk88+abE99Q+6lBxexg6ovM++MM6Q==",
+  "dgSpecHash": "aVU+iLuhVNFdxK+KqADG24vcN8M67v62k2E1PmFGUMKMd2w4J3TdBiCArbHq0yPXwME32acUdD00VbAHTF8Wxw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.ViewModels\\WebAPI.ViewModels.csproj",
+  "projectFilePath": "C:\\Users\\Truong08\\source\\repos\\Web-Technology\\projectHCMUE\\update-image\\WebAPI.ViewModels\\WebAPI.ViewModels.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Truong08\\.nuget\\packages\\fluentvalidation\\9.3.0\\fluentvalidation.9.3.0.nupkg.sha512",
     "C:\\Users\\Truong08\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.3.0\\fluentvalidation.aspnetcore.9.3.0.nupkg.sha512",

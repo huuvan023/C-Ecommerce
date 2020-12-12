@@ -16,3 +16,12 @@ C:\Users\Truong08\Desktop\New folder\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\W
 C:\Users\Truong08\Desktop\New folder\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.csproj.CoreCompileInputs.cache
 C:\Users\Truong08\Desktop\New folder\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.dll
 C:\Users\Truong08\Desktop\New folder\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.pdb
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ViewModels\bin\Debug\netcoreapp3.1\WebAPI.ViewModels.deps.json
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ViewModels\bin\Debug\netcoreapp3.1\WebAPI.ViewModels.dll
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ViewModels\bin\Debug\netcoreapp3.1\WebAPI.ViewModels.pdb
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.csprojAssemblyReference.cache
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.AssemblyInfoInputs.cache
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.AssemblyInfo.cs
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.dll
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.pdb

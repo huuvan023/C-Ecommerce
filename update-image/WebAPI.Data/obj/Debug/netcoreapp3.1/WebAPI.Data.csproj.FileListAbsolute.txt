@@ -32,3 +32,20 @@ C:\Users\Truong08\Desktop\New folder\WebAPI.Data\obj\Debug\netcoreapp3.1\WebAPI.
 C:\Users\Truong08\Desktop\New folder\WebAPI.Data\obj\Debug\netcoreapp3.1\WebAPI.Data.dll
 C:\Users\Truong08\Desktop\New folder\WebAPI.Data\obj\Debug\netcoreapp3.1\WebAPI.Data.pdb
 C:\Users\Truong08\Desktop\New folder\WebAPI.Data\obj\Debug\netcoreapp3.1\WebAPI.Data.genruntimeconfig.cache
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.Data\bin\Debug\netcoreapp3.1\WebAPI.Data.deps.json
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.Data\bin\Debug\netcoreapp3.1\WebAPI.Data.runtimeconfig.json
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.Data\bin\Debug\netcoreapp3.1\WebAPI.Data.runtimeconfig.dev.json
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.Data\bin\Debug\netcoreapp3.1\WebAPI.Data.dll
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.Data\bin\Debug\netcoreapp3.1\WebAPI.Data.pdb
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.Data\bin\Debug\netcoreapp3.1\WebAPI.Utilities.dll
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.Data\bin\Debug\netcoreapp3.1\WebAPI.ViewModels.dll
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.Data\bin\Debug\netcoreapp3.1\WebAPI.Utilities.pdb
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.Data\bin\Debug\netcoreapp3.1\WebAPI.ViewModels.pdb
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.Data\obj\Debug\netcoreapp3.1\WebAPI.Data.csprojAssemblyReference.cache
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.Data\obj\Debug\netcoreapp3.1\WebAPI.Data.AssemblyInfoInputs.cache
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.Data\obj\Debug\netcoreapp3.1\WebAPI.Data.AssemblyInfo.cs
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.Data\obj\Debug\netcoreapp3.1\WebAPI.Data.csproj.CoreCompileInputs.cache
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.Data\obj\Debug\netcoreapp3.1\WebAPI.Data.csproj.CopyComplete
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.Data\obj\Debug\netcoreapp3.1\WebAPI.Data.dll
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.Data\obj\Debug\netcoreapp3.1\WebAPI.Data.pdb
+C:\Users\Truong08\source\repos\Web-Technology\projectHCMUE\update-image\WebAPI.Data\obj\Debug\netcoreapp3.1\WebAPI.Data.genruntimeconfig.cache
