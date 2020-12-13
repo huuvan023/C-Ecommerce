@@ -1,0 +1,18 @@
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Utilities\bin\Debug\netstandard2.0\WebAPI.Utilities.deps.json
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Utilities\bin\Debug\netstandard2.0\WebAPI.Utilities.dll
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Utilities\bin\Debug\netstandard2.0\WebAPI.Utilities.pdb
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Utilities\obj\Debug\netstandard2.0\WebAPI.Utilities.csprojAssemblyReference.cache
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Utilities\obj\Debug\netstandard2.0\WebAPI.Utilities.AssemblyInfoInputs.cache
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Utilities\obj\Debug\netstandard2.0\WebAPI.Utilities.AssemblyInfo.cs
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Utilities\obj\Debug\netstandard2.0\WebAPI.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Utilities\obj\Debug\netstandard2.0\WebAPI.Utilities.dll
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.Utilities\obj\Debug\netstandard2.0\WebAPI.Utilities.pdb
+C:\Users\Truong08\Desktop\New folder\WebAPI.Utilities\bin\Debug\netstandard2.0\WebAPI.Utilities.deps.json
+C:\Users\Truong08\Desktop\New folder\WebAPI.Utilities\bin\Debug\netstandard2.0\WebAPI.Utilities.dll
+C:\Users\Truong08\Desktop\New folder\WebAPI.Utilities\bin\Debug\netstandard2.0\WebAPI.Utilities.pdb
+C:\Users\Truong08\Desktop\New folder\WebAPI.Utilities\obj\Debug\netstandard2.0\WebAPI.Utilities.csprojAssemblyReference.cache
+C:\Users\Truong08\Desktop\New folder\WebAPI.Utilities\obj\Debug\netstandard2.0\WebAPI.Utilities.AssemblyInfoInputs.cache
+C:\Users\Truong08\Desktop\New folder\WebAPI.Utilities\obj\Debug\netstandard2.0\WebAPI.Utilities.AssemblyInfo.cs
+C:\Users\Truong08\Desktop\New folder\WebAPI.Utilities\obj\Debug\netstandard2.0\WebAPI.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\Truong08\Desktop\New folder\WebAPI.Utilities\obj\Debug\netstandard2.0\WebAPI.Utilities.dll
+C:\Users\Truong08\Desktop\New folder\WebAPI.Utilities\obj\Debug\netstandard2.0\WebAPI.Utilities.pdb

@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "V5WXcXLsarGQiyqBl1Xw7wvBi9+RU972J4Z42U9rAnSea5uNjwHY62wdGGR+f0HEgoqVR9qiFyJfQeSX0Lmmzw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Truong08\\Desktop\\New folder\\WebAPI.ApiIntegration\\WebAPI.ApiIntegration.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Truong08\\.nuget\\packages\\fluentvalidation\\9.3.0\\fluentvalidation.9.3.0.nupkg.sha512",
+    "C:\\Users\\Truong08\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.3.0\\fluentvalidation.aspnetcore.9.3.0.nupkg.sha512",
+    "C:\\Users\\Truong08\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\9.3.0\\fluentvalidation.dependencyinjectionextensions.9.3.0.nupkg.sha512",
+    "C:\\Users\\Truong08\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.0\\microsoft.aspnetcore.http.features.5.0.0.nupkg.sha512",
+    "C:\\Users\\Truong08\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512",
+    "C:\\Users\\Truong08\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
+    "C:\\Users\\Truong08\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Truong08\\.nuget\\packages\\system.io.pipelines\\5.0.0\\system.io.pipelines.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
