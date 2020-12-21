@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace EmmerceAPIHCMUE.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/test")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
