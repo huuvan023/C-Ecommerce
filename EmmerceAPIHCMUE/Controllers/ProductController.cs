@@ -3,6 +3,7 @@ using EmmerceAPIHCMUE.Provider;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -19,11 +20,26 @@ namespace EmmerceAPIHCMUE.Controllers
         {
             try
             {
-                if (product.AddProduct())
+                if (Request.Headers["Authorization"] != "")
                 {
-                    return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.ADD_SUCESS1, null);
+                    CustomMiddleware middleware = new CustomMiddleware(Request.Headers["Authorization"]);
+                    if (middleware.ValidateToken(Constants.Instance.ADMIN_ROLE1))
+                    {
+                        if (product.AddProduct())
+                        {
+                            return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.ADD_SUCESS1, null);
+                        }
+                        return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
+                    }
+                    else
+                    {
+                        return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SESSION_EXPIRED, null);
+                    }
                 }
-                return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
+                else
+                {
+                    return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SESSION_EXPIRED, null);
+                }
             }
             catch (Exception e)
             {
@@ -36,11 +52,26 @@ namespace EmmerceAPIHCMUE.Controllers
         {
             try
             {
-                if (product.DeleteProduct())
+                if (Request.Headers["Authorization"] != "")
                 {
-                    return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.DELETE_SUCESS1, null);
+                    CustomMiddleware middleware = new CustomMiddleware(Request.Headers["Authorization"]);
+                    if (middleware.ValidateToken(Constants.Instance.ADMIN_ROLE1))
+                    {
+                        if (product.DeleteProduct())
+                        {
+                            return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.DELETE_SUCESS1, null);
+                        }
+                        return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
+                    }
+                    else
+                    {
+                        return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SESSION_EXPIRED, null);
+                    }
                 }
-                return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
+                else
+                {
+                    return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SESSION_EXPIRED, null);
+                }
             }
             catch (Exception e)
             {
@@ -53,11 +84,63 @@ namespace EmmerceAPIHCMUE.Controllers
         {
             try
             {
-                if (product.UpdateProduct())
+                if (Request.Headers["Authorization"] != "")
                 {
-                    return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.UPDATE_SUCESS1, null);
+                    CustomMiddleware middleware = new CustomMiddleware(Request.Headers["Authorization"]);
+                    if (middleware.ValidateToken(Constants.Instance.ADMIN_ROLE1))
+                    {
+                        if (product.UpdateProduct())
+                        {
+                            return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.UPDATE_SUCESS1, null);
+                        }
+                        return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.UPDATE_FAIL1, null);
+                    }
+                    else
+                    {
+                        return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SESSION_EXPIRED, null);
+                    }
                 }
-                return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.UPDATE_FAIL1, null);
+                else
+                {
+                    return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SESSION_EXPIRED, null);
+                }
+
+            }
+            catch (Exception e)
+            {
+                return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
+            }
+        }
+
+        [HttpGet("all")]
+        public ResponseData GetAllProduct()
+        {
+            try
+            {
+                Product product = new Product();
+                DataTable dt = product.GetAllProduct();
+
+                List<Product> resData = new List<Product>();
+                foreach (DataRow row in dt.Rows)
+                {
+                    Product a = new Product();
+                    a.IdProduct = row["idProduct"].ToString();
+                    a.IdSize = row["idSize"].ToString();
+                    a.IdBrand = row["idBrand"].ToString();
+                    a.IdColor = row["idColor"].ToString();
+                    a.IdCategory = row["idCategory"].ToString();
+                    a.IdType = row["idType"].ToString();
+                    a.Price = row["price"].ToString();
+                    a.SalePrice = row["salePrice"].ToString();
+                    a.PhotoReview = row["photoReview"].ToString();
+                    a.Detail = row["detail"].ToString();
+                    a.IsSaling = Int32.Parse(row["isSaling"].ToString());
+                    a.ExpiredSalingDate = row["expiredSalingDate"].ToString();
+                    a.DateAdded = row["dateAdded"].ToString();
+
+                    resData.Add(a);
+                }
+                return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, resData);
             }
             catch (Exception e)
             {

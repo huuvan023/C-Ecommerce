@@ -1,6 +1,7 @@
 ﻿using EmmerceAPIHCMUE.Provider;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -20,6 +21,7 @@ namespace EmmerceAPIHCMUE.Models
         private string detail;
         private int isSaling;
         private string expiredSalingDate;
+        private string dateAdded;
 
         private DateTime dateNow = DateTime.Now; 
         public bool AddProduct()
@@ -100,6 +102,12 @@ namespace EmmerceAPIHCMUE.Models
             return false;
         }
 
+        public DataTable GetAllProduct()
+        {
+            string query = "select * from dbo.products";
+            return Connection.Instance.ExecuteQuery(query);
+        }
+
         public string IdProduct { get => idProduct; set => idProduct = value; }
         public string IdSize { get => idSize; set => idSize = value; }
         public string IdBrand { get => idBrand; set => idBrand = value; }
@@ -112,5 +120,6 @@ namespace EmmerceAPIHCMUE.Models
         public string Detail { get => detail; set => detail = value; }
         public int IsSaling { get => isSaling; set => isSaling = value; }
         public string ExpiredSalingDate { get => expiredSalingDate; set => expiredSalingDate = value; }
+        public string DateAdded { get => dateAdded; set => dateAdded = value; }
     }
 }

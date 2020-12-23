@@ -150,6 +150,7 @@ namespace EmmerceAPIHCMUE.Controllers
                 return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
             }
         } 
+
         [HttpGet("all")]
         public ResponseData GetAllUser()
         {
@@ -192,5 +193,6 @@ namespace EmmerceAPIHCMUE.Controllers
                 return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
             }
         }
+    
     }
 }
