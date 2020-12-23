@@ -9,7 +9,22 @@ namespace EmmerceAPIHCMUE.Provider
 {
     public class Connection
     {
+        private static Connection instance;
         private string ConnSQL = "Data Source=DESKTOP-K4R56PD;Initial Catalog=ecommerce;Integrated Security=True";
+
+        public static Connection Instance 
+        {
+            get 
+            { 
+                if (instance == null) instance = new Connection();
+                return Connection.instance;
+            }
+            private set 
+            {
+                Connection.instance = value;
+            }
+        }
+        private Connection() { }
         //Exec được tất cả câu query
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
@@ -38,7 +53,7 @@ namespace EmmerceAPIHCMUE.Provider
                
             return data;
         }
-        //Chủ yêu là thêm sửa xóa
+        //Chủ yêu là thêm sửa xóa-> xuất ra số dòng đã được query trong sql
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;

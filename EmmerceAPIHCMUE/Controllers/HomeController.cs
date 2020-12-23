@@ -3,16 +3,17 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using Newtonsoft.Json;
+using EmmerceAPIHCMUE.Controllers;
+using EmmerceAPIHCMUE.Models;
 using EmmerceAPIHCMUE.Provider;
 
 namespace EmmerceAPIHCMUE.Controllers
 {
     [ApiController]
+    [Produces("application/json")]
     [Route("/home/")]
     public class HomeController : ControllerBase
     {
@@ -24,12 +25,15 @@ namespace EmmerceAPIHCMUE.Controllers
 
 
         [HttpGet("test")]
-        public object Get()
+        public ResponseData Get()
         {
-            Connection conn = new Connection();
-            object dt = conn.ExecuteNonQuery("insert into admin values('qwe', 'wqe', 'qwe', 'qwe', 'qwe', '2020-12-01 00:00:00.000')");
-            return dt;
+            //object dt = Connection.Instance.ExecuteNonQuery("insert into admin values('qwae', 'awqe', 'qdwe', 'qwae', 'qwe', '2020-12-01 00:00:00.000')");
+            //return dt;
             //return new Home();
+            //return new Home(2,3,"asd").getAll();
+            return new ResponseData(1, "SUCCESS", null);
         }
+       
+        
     }
 }
