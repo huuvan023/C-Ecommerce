@@ -28,11 +28,13 @@ namespace EmmerceAPIHCMUE.Provider
         private string LOGIN_SUCCESS = "LOGIN_SUCCESS";
         private string LOGIN_FAIL = "LOGIN_FAIL";
         private string SUCCESS_MESSAGE = "SUCCESS!";
-        private string FAIL_MESSAGE = "FAIL_REQUEST";
+        private string FAIL_MESSAGE = "FAIL_MESSAGE";
         private string mySecret = "asdv234234^&%&^%&^hjsdfb2%%%";
         private string myIssuer = "huuvan";
         private string myAudience = "CNTTD";
         private string EMAIL_NOT_EXIST = "EMAIL_NOT_EXIST";
+        private string ADD_SUCESS = "ADD_SUCESS";
+        private string DELETE_SUCESS = "DELETE_SUCESS";
         private string UPDATE_SUCESS = "UPDATE_SUCESS";
         private string UPDATE_FAIL = "UPDATE_FAIL";
         private string RESET_PASSWORD_FAIL = "RESET_PASSWORD_FAIL";
@@ -40,6 +42,8 @@ namespace EmmerceAPIHCMUE.Provider
         private int USER_ROLE = 2;
         private string ClientID = "814891624345-k275c9gvb6nb1fn1qihrqrnrvb8nq8vr.apps.googleusercontent.com";
         private string ClientSecret = "AL7woG1O9n5hHEGsjpAHMKac";
+        private string a = "1";
+        //đóng gói: Ctr + R + e 
         public int SUCCESS_CODE { get => sUCCESS_CODE; }
         public int FAIL_CODE { get => fAIL_CODE;  }
         public string BAD_REQUEST { get => bAD_REQUEST; }
@@ -62,5 +66,8 @@ namespace EmmerceAPIHCMUE.Provider
         public int USER_ROLE1 { get => USER_ROLE; }
         public string ClientID1 { get => ClientID;  }
         public string ClientSecret1 { get => ClientSecret; }
+        public string A { get => a;  }
+        public string ADD_SUCESS1 { get => ADD_SUCESS;}
+        public string DELETE_SUCESS1 { get => DELETE_SUCESS;  }
     }
 }

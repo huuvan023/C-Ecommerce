@@ -1,6 +1,7 @@
 ﻿using EmmerceAPIHCMUE.Models;
 using EmmerceAPIHCMUE.Provider;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,35 +11,35 @@ namespace EmmerceAPIHCMUE.Controllers
 {
     [ApiController]
     [Produces("application/json")]
-    [Route("/admin/")]
-    public class AdminController
+    [Route("/voucher")]
+
+    public class VoucherController : ControllerBase
     {
-        [HttpPost("signin")]
-        public ResponseData SignIn([FromBody] Admin s)
+        [HttpPost("add")]
+        public ResponseData AddVouchers([FromBody] Voucher voucher)
         {
             try
             {
-                if (s.AdminLogin())
+                if (voucher.AddVoucher())
                 {
-                    string token = s.GetToken();
-                    return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.LOGIN_SUCCESS1, new Token(token));
+                    return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.ADD_SUCESS1, null);
                 }
-
-                return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.LOGIN_FAIL1, null);
+                return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
             }
             catch (Exception e)
             {
                 return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
             }
         }
-        [HttpPost("signup")]
-        public ResponseData SignUp([FromBody] Admin s)
+
+        [HttpPost("delete")]
+        public ResponseData DeleteVouchers([FromBody] Voucher voucher)
         {
             try
             {
-                if (s.AdminSignUp())
+                if (voucher.DeleteVoucher())
                 {
-                    return new ResponseData(Constants.Instance.SUCCESS_CODE, "Sign up success!", null);
+                    return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.DELETE_SUCESS1, null);
                 }
                 return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
             }
