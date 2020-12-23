@@ -52,6 +52,7 @@ namespace EmmerceAPIHCMUE.Controllers
                 if(s.SignIn())
                 {
                     string token = s.GetToken();
+                    s.UpdateLastLogin();
                     return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.LOGIN_SUCCESS1, new Token(token));
                 }
 
@@ -112,15 +113,79 @@ namespace EmmerceAPIHCMUE.Controllers
             {
                 if (s.IsEmailExits())
                 {
+                    User userUpdatePass = new User();
+                    string randomPassword = Helper.Instance.CreateRandomPassword(8);
+                    if (!s.ResetPassword(randomPassword))
+                    {
+                        return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.RESET_PASSWORD_FAIL1, null);
+                    }
                     string To = s.email;
                     string Subject = "Reset password";
-                    string Body = "Xin chào" + s.email + ". Đây là mật khẩu mới của bạn";
+                    string Body = "Xin chào " + s.email + ". Đây là mật khẩu mới của bạn là: " + randomPassword;
                     if (SMTPSendMail.Instance.SendEmail(To, Subject, Body))
                     {
                         return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SUCCESS_MESSAGE1, "Successfully! Please check your email!");
                     }
                 }
                 return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.EMAIL_NOT_EXIST1, null);
+            }
+            catch(Exception e)
+            {
+                return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
+            }
+        }
+        [HttpPost("update")]
+        public ResponseData UpdateUser([FromBody]  User s)
+        {
+            try
+            {
+                if (s.UpdateUser())
+                {
+                    return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.UPDATE_SUCESS1, null);
+                }
+                return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.UPDATE_FAIL1, null);
+            }
+            catch (Exception e)
+            {
+                return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
+            }
+        } 
+        [HttpGet("all")]
+        public ResponseData GetAllUser()
+        {
+           try
+            {
+                if (Request.Headers["Authorization"] != "")
+                {
+                    CustomMiddleware middleware = new CustomMiddleware(Request.Headers["Authorization"]);
+                    if (middleware.ValidateToken(Constants.Instance.ADMIN_ROLE1))
+                    {
+                        User s = new User();
+                        DataTable dt = s.GetAllUser();
+
+                        List<User> resData = new List<User>();
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            User a = new User();
+                            a.idUser = row["idUser"].ToString();
+                            a.email = row["email"].ToString();
+                            a.password = "***";
+                            a.firstName = row["firstName"].ToString();
+                            a.lastName = row["lastName"].ToString();
+                            a.birthday = row["birthday"].ToString();
+                            a.phoneNumber = row["phoneNumber"].ToString();
+                            a.address = row["address"].ToString();
+                            a.note = row["note"].ToString();
+                            a.province = row["province"].ToString();
+                            a.interestedIn = row["interestedIn"].ToString();
+                            a.lastLogin = row["lastLogin"].ToString();
+                            a.avatar = row["avatar"].ToString();
+                            resData.Add(a);
+                        }
+                        return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, resData);
+                    }
+                }
+                return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.FAIL_MESSAGE1, null);
             }
             catch(Exception e)
             {

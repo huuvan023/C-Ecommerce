@@ -49,8 +49,62 @@ namespace EmmerceAPIHCMUE.Models
         public bool SignUp()
         {
             string query = "insert into dbo.users values('" + Helper.Instance.GenarateID() + "', '" + this.email + "', '" + Helper.Instance.HashPassword(this.password) + "', N'" + this.firstName + "', N'" + this.lastName + "', '" + this.birthday + "', '" + this.phoneNumber + "', '" + this.address + "', '" + this.note + "', '" + this.province + "', '" + this.interestedIn + "', '" + this.lastLogin + "', '" + this.avatar + "')";
-
-
+            int rowExec = Connection.Instance.ExecuteNonQuery(query);
+            if (rowExec == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool UpdateUser()
+        {
+            string query = "update dbo.users set ";
+            if (this.email != null && this.email != "")
+            {
+                query += "email = '" + this.email + "',";
+            }
+            if (this.password != null && this.password != "")
+            {
+                query += "password = '" + this.password + "',";
+            }
+            if (this.firstName != null && this.firstName != "")
+            {
+                query += "firstName = '" + this.firstName + "',";
+            }
+            if (this.lastName != null && this.lastName != "")
+            {
+                query += "lastName = '" + this.lastName + "',";
+            }
+            if (this.birthday != null && this.birthday != "")
+            {
+                query += "birthday = '" + this.birthday + "',";
+            }
+            if (this.address != null && this.address != "")
+            {
+                query += " address = '" + this.address + "',";
+            }
+            if (this.phoneNumber != null && this.phoneNumber != "")
+            {
+                query += "phoneNumber = '" + this.phoneNumber + "',";
+            }
+            if (this.note != null && this.note != "")
+            {
+                query += "note = '" + this.note + "',";
+            }
+            if (this.province != null && this.province != "")
+            {
+                query += "province = '" + this.province + "',";
+            }
+            if (this.interestedIn != null && this.interestedIn != "")
+            {
+                query += "interestedIn = '" + this.interestedIn + "',";
+            }
+            if (this.avatar != null && this.avatar != "")
+            {
+                query += "avatar = '" + this.avatar + "'";
+            }
+            query = query.Remove(query.Length - 1);
+            query += " where idUser = '" + this.idUser + "'";
             int rowExec = Connection.Instance.ExecuteNonQuery(query);
             if (rowExec == 1)
             {
@@ -72,8 +126,37 @@ namespace EmmerceAPIHCMUE.Models
         {
             string query = "select password from dbo.users where email = '" + this.email + "'";
             string pass = (string)Connection.Instance.ExecuteScalar(query);
+            if( pass== null || pass == "" )
+            {
+                return false;
+            }
             bool compare = Helper.Instance.ValidatePassword(this.password, pass);
             return compare;
+        }
+        public bool ResetPassword(string newPassword)
+        {
+            string queryGetID = "Select idUser from dbo.users where email='" + this.email + "'";
+            string id = (string)Connection.Instance.ExecuteScalar(queryGetID);
+            string hashedPassword = Helper.Instance.HashPassword(newPassword);
+            string query = "update dbo.users set password = '" + hashedPassword + "' where idUser = '" + id + "'";
+            int rowExec = (int)Connection.Instance.ExecuteNonQuery(query);
+            if (rowExec == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool UpdateLastLogin()
+        {
+            string queryGetID = "Select idUser from dbo.users where email='" + this.email + "'";
+            string id = (string)Connection.Instance.ExecuteScalar(queryGetID);
+            string query = "update dbo.users set lastLogin = '" + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss") + "' where idUser = '" + id + "'";
+            int rowExec = (int)Connection.Instance.ExecuteNonQuery(query);
+            if (rowExec == 1)
+            {
+                return true;
+            }
+            return false;
         }
         public DataTable fetchUser(string id)
         {
@@ -86,6 +169,11 @@ namespace EmmerceAPIHCMUE.Models
             string query = "Select idUser from dbo.users where email='" + this.email + "'";
             string id = (string)Connection.Instance.ExecuteScalar(query);
             return Helper.Instance.GenerateToken(id);
+        }
+        public DataTable GetAllUser()
+        {
+            string query = "select * from dbo.users";
+            return Connection.Instance.ExecuteQuery(query);
         }
                 
     }

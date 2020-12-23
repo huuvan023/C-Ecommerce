@@ -33,6 +33,13 @@ namespace EmmerceAPIHCMUE.Provider
         private string myIssuer = "huuvan";
         private string myAudience = "CNTTD";
         private string EMAIL_NOT_EXIST = "EMAIL_NOT_EXIST";
+        private string UPDATE_SUCESS = "UPDATE_SUCESS";
+        private string UPDATE_FAIL = "UPDATE_FAIL";
+        private string RESET_PASSWORD_FAIL = "RESET_PASSWORD_FAIL";
+        private int ADMIN_ROLE = 1;
+        private int USER_ROLE = 2;
+        private string ClientID = "814891624345-k275c9gvb6nb1fn1qihrqrnrvb8nq8vr.apps.googleusercontent.com";
+        private string ClientSecret = "AL7woG1O9n5hHEGsjpAHMKac";
         public int SUCCESS_CODE { get => sUCCESS_CODE; }
         public int FAIL_CODE { get => fAIL_CODE;  }
         public string BAD_REQUEST { get => bAD_REQUEST; }
@@ -48,5 +55,12 @@ namespace EmmerceAPIHCMUE.Provider
         public string MyIssuer { get => myIssuer;}
         public string MyAudience { get => myAudience; }
         public string EMAIL_NOT_EXIST1 { get => EMAIL_NOT_EXIST; }
+        public string UPDATE_SUCESS1 { get => UPDATE_SUCESS;}
+        public string UPDATE_FAIL1 { get => UPDATE_FAIL; }
+        public string RESET_PASSWORD_FAIL1 { get => RESET_PASSWORD_FAIL;}
+        public int ADMIN_ROLE1 { get => ADMIN_ROLE; }
+        public int USER_ROLE1 { get => USER_ROLE; }
+        public string ClientID1 { get => ClientID;  }
+        public string ClientSecret1 { get => ClientSecret; }
     }
 }
