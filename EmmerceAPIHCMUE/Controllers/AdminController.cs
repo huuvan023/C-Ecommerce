@@ -11,7 +11,7 @@ namespace EmmerceAPIHCMUE.Controllers
     [ApiController]
     [Produces("application/json")]
     [Route("/admin/")]
-    public class AdminController : ControllerBase
+    public class AdminController
     {
         [HttpPost("signin")]
         public ResponseData SignIn([FromBody] Admin s)
@@ -36,7 +36,6 @@ namespace EmmerceAPIHCMUE.Controllers
         {
             try
             {
-
                 if (s.AdminSignUp())
                 {
                     return new ResponseData(Constants.Instance.SUCCESS_CODE, "Sign up success!", null);
