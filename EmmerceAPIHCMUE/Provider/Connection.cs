@@ -10,7 +10,7 @@ namespace EmmerceAPIHCMUE.Provider
     public class Connection
     {
         private static Connection instance;
-        private string ConnSQL = "Data Source=DESKTOP-K4R56PD;Initial Catalog=ecommerce;Integrated Security=True";
+        private string ConnSQL = "Data Source=DESKTOP-K4R56PD;Initial Catalog=ecommerceHCMUE;Integrated Security=True";
 
         public static Connection Instance 
         {

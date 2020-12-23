@@ -28,7 +28,7 @@ namespace EmmerceAPIHCMUE.Provider
         private string LOGIN_SUCCESS = "LOGIN_SUCCESS";
         private string LOGIN_FAIL = "LOGIN_FAIL";
         private string SUCCESS_MESSAGE = "SUCCESS!";
-        private string FAIL_MESSAGE = "FAIL_MESSAGE";
+        private string FAIL_MESSAGE = "FAIL_REQUEST";
         private string mySecret = "asdv234234^&%&^%&^hjsdfb2%%%";
         private string myIssuer = "huuvan";
         private string myAudience = "CNTTD";

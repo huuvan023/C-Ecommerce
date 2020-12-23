@@ -11,7 +11,7 @@ namespace EmmerceAPIHCMUE.Controllers
     [ApiController]
     [Produces("application/json")]
     [Route("/admin/")]
-    public class AdminController
+    public class AdminController : ControllerBase
     {
         [HttpPost("signin")]
         public ResponseData SignIn([FromBody] Admin s)
