@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace EmmerceAPIHCMUE.Provider
 {
     public class Connection
     {
+        private const string V = "Data Source=.\\SQLEXPRESS;Initial Catalog=ecommerce;Integrated Security=True";
         private static Connection instance;
-        private string ConnSQL = "Data Source=DESKTOP-K4R56PD;Initial Catalog=ecommerceHCMUE;Integrated Security=True";
+        private string ConnSQL = V;
 
         public static Connection Instance 
         {

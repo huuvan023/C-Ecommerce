@@ -15,9 +15,6 @@ using System.Net.Http.Headers;
 using System.IdentityModel.Tokens.Jwt;
 using System.Net.Mail;
 using System.Net;
-using Microsoft.AspNetCore.Http;
-using System.IO;
-using Microsoft.AspNetCore.Hosting;
 
 namespace EmmerceAPIHCMUE.Controllers
 {
@@ -26,11 +23,6 @@ namespace EmmerceAPIHCMUE.Controllers
     [Route("/user/")]
     public class UserController: ControllerBase
     {
-        public static IWebHostEnvironment _environment;
-        public UserController(IWebHostEnvironment environment)
-        {
-            _environment = environment;
-        }
         [HttpPost("signup")]
         public ResponseData Post([FromBody] User s)
         {
@@ -198,31 +190,6 @@ namespace EmmerceAPIHCMUE.Controllers
             catch(Exception e)
             {
                 return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
-            }
-        }
-        [HttpPost("files")]
-        public async Task<string> UploadFile(IFormFile objFile)
-        {
-            try
-            {
-                if (objFile.Length > 0)
-                {
-                    if (!Directory.Exists(_environment.WebRootPath + "\\Upload\\"))
-                    {
-                        Directory.CreateDirectory(_environment.WebRootPath + "\\Upload\\");
-                    }
-                    using (FileStream fileStream = System.IO.File.Create(_environment.WebRootPath + "\\Upload\\" + objFile.FileName))
-                    {
-                        objFile.CopyTo(fileStream);
-                        fileStream.Flush();
-                        return "Upload success!";
-                    }
-                }
-                return "Upload fail!";
-            }
-            catch(Exception e)
-            {
-                return "Upload fail! Something went wrong";
             }
         }
     }
