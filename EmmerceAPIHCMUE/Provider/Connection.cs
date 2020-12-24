@@ -9,7 +9,7 @@ namespace EmmerceAPIHCMUE.Provider
 {
     public class Connection
     {
-        private const string V = "Data Source=.\\SQLEXPRESS;Initial Catalog=ecommerce;Integrated Security=True";
+        private const string V = "Data Source=DESKTOP-K4R56PD;Initial Catalog=ecommerceHCMUE;Integrated Security=True";
         private static Connection instance;
         private string ConnSQL = V;
 

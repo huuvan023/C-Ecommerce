@@ -21,7 +21,7 @@ namespace EmmerceAPIHCMUE.Models
 
         public bool AddProductPhoto()
         {
-            string query = "insert into dbo.productPhotos values('"+this.idProduct+"','" + this.link + "','" + this.uploadedTime + "','" + this.idPhoto + "')";
+            string query = "insert into dbo.productPhotos values('"+this.idProduct+"','" + this.link + "','" + DateTime.Now.ToString() + "','" + this.idPhoto + "')";
             int rowExec = Connection.Instance.ExecuteNonQuery(query);
             if (rowExec == 1)
             {
@@ -53,6 +53,24 @@ namespace EmmerceAPIHCMUE.Models
         {
             string query = "select * from dbo.productPhotos";
             return Connection.Instance.ExecuteQuery(query);
+        }
+        public List<ProductPhoto> FindByProductID(string id)
+        {
+            string query = "select * from dbo.productPhotos where idProduct = '" + id + "'";
+            DataTable dt = Connection.Instance.ExecuteQuery(query);
+            List<ProductPhoto> photos = new List<ProductPhoto>();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                ProductPhoto a = new ProductPhoto();
+                a.idPhoto = row["idPhoto"].ToString();
+                a.idProduct = row["idProduct"].ToString();
+                a.link = row["link"].ToString();
+                a.uploadedTime = row["uploadedTime"].ToString();
+                photos.Add(a);
+            }
+
+            return photos;
         }
     }
 }

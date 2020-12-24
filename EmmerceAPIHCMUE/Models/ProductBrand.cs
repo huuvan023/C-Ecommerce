@@ -51,5 +51,17 @@ namespace EmmerceAPIHCMUE.Models
             string query = "select * from dbo.productBrand";
             return Connection.Instance.ExecuteQuery(query);
         }
+        public ProductBrand FindByID()
+        {
+            string query = "select * from dbo.productBrand where idBrand = '" + this.idBrand + "'";
+            DataTable dt = Connection.Instance.ExecuteQuery(query);
+            foreach (DataRow row in dt.Rows)
+            {
+                this.idBrand = row["idBrand"].ToString();
+                this.brandName = row["brandName"].ToString();
+                this.brandDetail = row["brandDetail"].ToString();
+            }
+            return this;
+        }
     }
 }
