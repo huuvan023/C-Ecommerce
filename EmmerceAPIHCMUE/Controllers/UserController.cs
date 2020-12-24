@@ -193,7 +193,6 @@ namespace EmmerceAPIHCMUE.Controllers
                 return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
             }
         }
-
         [HttpPost("find")]
         public ResponseData FindUser([FromBody] User s)
         {
