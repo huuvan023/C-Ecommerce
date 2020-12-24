@@ -1,7 +1,6 @@
 ﻿using EmmerceAPIHCMUE.Models;
 using EmmerceAPIHCMUE.Provider;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,21 +11,20 @@ namespace EmmerceAPIHCMUE.Controllers
 {
     [ApiController]
     [Produces("application/json")]
-    [Route("/voucher")]
-
-    public class VoucherController : ControllerBase
+    [Route("/rating")]
+    public class RatingController : Controller
     {
         [HttpPost("add")]
-        public ResponseData AddVouchers([FromBody] Voucher voucher)
+        public ResponseData AddRating([FromBody] Rating rating)
         {
             try
             {
                 if (Request.Headers["Authorization"] != "")
                 {
                     CustomMiddleware middleware = new CustomMiddleware(Request.Headers["Authorization"]);
-                    if (middleware.ValidateToken(Constants.Instance.ADMIN_ROLE1))
+                    if (middleware.ValidateToken(Constants.Instance.USER_ROLE1))
                     {
-                        if (voucher.AddVoucher())
+                        if (rating.AddRating())
                         {
                             return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.ADD_SUCESS1, null);
                         }
@@ -48,18 +46,17 @@ namespace EmmerceAPIHCMUE.Controllers
             }
         }
 
-       
         [HttpPost("delete")]
-        public ResponseData DeleteVouchers([FromBody] Voucher voucher)
+        public ResponseData DeleteRating([FromBody] Rating rating)
         {
             try
             {
                 if (Request.Headers["Authorization"] != "")
                 {
                     CustomMiddleware middleware = new CustomMiddleware(Request.Headers["Authorization"]);
-                    if (middleware.ValidateToken(Constants.Instance.ADMIN_ROLE1))
+                    if (middleware.ValidateToken(Constants.Instance.USER_ROLE1))
                     {
-                        if (voucher.DeleteVoucher())
+                        if (rating.DeleteRating())
                         {
                             return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.DELETE_SUCESS1, null);
                         }
@@ -82,40 +79,66 @@ namespace EmmerceAPIHCMUE.Controllers
             }
         }
 
-        [HttpGet("all")]
-        public ResponseData GetAllVoucher()
+        [HttpPost("update")]
+        public ResponseData UpdateRating([FromBody] Rating rating)
         {
             try
             {
                 if (Request.Headers["Authorization"] != "")
                 {
                     CustomMiddleware middleware = new CustomMiddleware(Request.Headers["Authorization"]);
-                    if (middleware.ValidateToken(Constants.Instance.ADMIN_ROLE1))
+                    if (middleware.ValidateToken(Constants.Instance.USER_ROLE1))
                     {
-                        Voucher voucher = new Voucher();
-                        DataTable dt = voucher.GetAllVoucher();
-
-                        List<Voucher> resData = new List<Voucher>();
-                        foreach (DataRow row in dt.Rows)
+                        if (rating.UpdateRating())
                         {
-                            Voucher a = new Voucher();
-                            a.IdVoucher = row["idVoucher"].ToString();
-                            a.Price = Int32.Parse(row["price"].ToString());
-                            a.ExpiredDate = row["expiredDate"].ToString();
-                            a.IsUse = Int32.Parse(row["isUse"].ToString());
-
-                            resData.Add(a);
+                            return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.UPDATE_SUCESS1, null);
                         }
-                        return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, resData);
+                        return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
+                    }
+                    else
+                    {
+                        return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SESSION_EXPIRED, null);
                     }
                 }
-                return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.FAIL_MESSAGE1, null);
+                else
+                {
+                    return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SESSION_EXPIRED, null);
+                }
             }
             catch (Exception e)
             {
                 return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
             }
         }
-    
+
+        [HttpGet("all")]
+        public ResponseData GetAllRating()
+        {
+            try
+            {
+                Rating rating = new Rating();
+                DataTable dt = rating.GetAllRating();
+
+                List<Rating> resData = new List<Rating>();
+                foreach (DataRow row in dt.Rows)
+                {
+                    Rating a = new Rating();
+                    a.idUser = row["idUser"].ToString();
+                    a.idProduct = row["idProduct"].ToString();
+                    a.comment = row["comment"].ToString();
+                    a.rate = Int32.Parse(row["rate"].ToString());
+                    a.rateDate = row["rateDate"].ToString();
+
+                    resData.Add(a);
+                }
+                return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, resData);
+            }
+            catch (Exception e)
+            {
+                return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
+            }
+        }
+
+
     }
 }
