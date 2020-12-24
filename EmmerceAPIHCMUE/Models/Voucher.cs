@@ -1,6 +1,7 @@
 ﻿using EmmerceAPIHCMUE.Provider;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -34,6 +35,12 @@ namespace EmmerceAPIHCMUE.Models
                 return true;
             }
             return false;
+        }
+
+        public DataTable GetAllVoucher()
+        {
+            string query = "select * from dbo.vouchers";
+            return Connection.Instance.ExecuteQuery(query);
         }
 
         public string IdVoucher { get => idVoucher; set => idVoucher = value; }
