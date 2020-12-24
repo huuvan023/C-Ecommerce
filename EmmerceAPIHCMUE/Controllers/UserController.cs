@@ -193,6 +193,46 @@ namespace EmmerceAPIHCMUE.Controllers
                 return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
             }
         }
-    
+        [HttpPost("find")]
+        public ResponseData FindUser([FromBody] User s)
+        {
+            try
+            {
+                if (Request.Headers["Authorization"] != "")
+                {
+                    CustomMiddleware middleware = new CustomMiddleware(Request.Headers["Authorization"]);
+                    if (middleware.ValidateToken(Constants.Instance.ADMIN_ROLE1))
+                    {
+                        DataTable dt = s.FindUser();
+
+                        List<User> resData = new List<User>();
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            User a = new User();
+                            a.idUser = row["idUser"].ToString();
+                            a.email = row["email"].ToString();
+                            a.password = "***";
+                            a.firstName = row["firstName"].ToString();
+                            a.lastName = row["lastName"].ToString();
+                            a.birthday = row["birthday"].ToString();
+                            a.phoneNumber = row["phoneNumber"].ToString();
+                            a.address = row["address"].ToString();
+                            a.note = row["note"].ToString();
+                            a.province = row["province"].ToString();
+                            a.interestedIn = row["interestedIn"].ToString();
+                            a.lastLogin = row["lastLogin"].ToString();
+                            a.avatar = row["avatar"].ToString();
+                            resData.Add(a);
+                        }
+                        return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, resData);
+                    }
+                }
+                return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.FAIL_MESSAGE1, null);
+            }
+            catch(Exception e)
+            {
+                return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
+            }
+        }
     }
 }

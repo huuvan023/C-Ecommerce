@@ -176,5 +176,10 @@ namespace EmmerceAPIHCMUE.Models
             return Connection.Instance.ExecuteQuery(query);
         }
                 
+        public DataTable FindUser()
+        {
+            String query = "Select * from dbo.users where email like'%" + this.email + "%'";
+            return Connection.Instance.ExecuteQuery(query);
+        }
     }
 }
