@@ -147,6 +147,34 @@ namespace EmmerceAPIHCMUE.Controllers
                 return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
             }
         }
+        [HttpPost("find-by-id")]
+        public ResponseData GetProductById([FromBody] Product p)
+        {
+            try
+            { //idProduct
+                if (Request.Headers["Authorization"] != "")
+                {
+                    CustomMiddleware middleware = new CustomMiddleware(Request.Headers["Authorization"]);
+                    if (middleware.ValidateToken(Constants.Instance.ADMIN_ROLE1) || middleware.ValidateToken(Constants.Instance.USER_ROLE1))
+                    {
+                        Product data = p.GetProductById();
+                        return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SUCCESS_MESSAGE1, data);
+                    }
+                    else
+                    {
+                        return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SESSION_EXPIRED, null);
+                    }
+                }
+                else
+                {
+                    return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SESSION_EXPIRED, null);
+                }
+            }
+            catch (Exception e)
+            {
+                return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
+            }
+        }
 
     }
 }

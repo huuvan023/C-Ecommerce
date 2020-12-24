@@ -22,7 +22,9 @@ namespace EmmerceAPIHCMUE.Models
         {
             string idOder = Helper.Instance.CreateRandomPassword(10);
             int totalPrice = 0;
-            string queryinitOrderDetail = "insert into dbo.odersDetails values('" + idOder + "','" + DateTime.UtcNow.ToString() + "','" + Constants.Instance.INITIAL_STT1 + "',0)";
+
+            string queryinitOrderDetail = "insert into dbo.odersDetails values('" + idOder + "','" + DateTime.UtcNow.ToString() + "','" + Constants.Instance.INITIAL_STT1 + "',0,'" + this.idUser + "')";
+
             if (Connection.Instance.ExecuteNonQuery(queryinitOrderDetail) < 1)
             {
                 return false;

@@ -107,6 +107,29 @@ namespace EmmerceAPIHCMUE.Models
             string query = "select * from dbo.products";
             return Connection.Instance.ExecuteQuery(query);
         }
+        public Product GetProductById()
+        {
+            string query = "select * from dbo.products where idProduct = '" + this.idProduct + "'";
+            Product a = new Product();
+            DataTable dt = Connection.Instance.ExecuteQuery(query);
+            foreach (DataRow row in dt.Rows)
+            {
+                a.idProduct = row["idProduct"].ToString();
+                a.idSize = row["idSize"].ToString();
+                a.idBrand = row["idBrand"].ToString();
+                a.idColor = row["idColor"].ToString();
+                a.idCategory = row["idCategory"].ToString();
+                a.idType = row["idType"].ToString();
+                a.price = row["price"].ToString();
+                a.salePrice = row["salePrice"].ToString();
+                a.photoReview = row["photoReview"].ToString();
+                a.detail = row["detail"].ToString();
+                a.isSaling = Int32.Parse(row["isSaling"].ToString());
+                a.expiredSalingDate = row["expiredSalingDate"].ToString();
+                a.dateAdded = row["dateAdded"].ToString();
+            }
+            return a;
+        }
 
         public string IdProduct { get => idProduct; set => idProduct = value; }
         public string IdSize { get => idSize; set => idSize = value; }

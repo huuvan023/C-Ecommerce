@@ -50,5 +50,16 @@ namespace EmmerceAPIHCMUE.Models
             string query = "select * from dbo.productTypes";
             return Connection.Instance.ExecuteQuery(query);
         }
+        public ProductType FindByID()
+        {
+            string query = "select * from dbo.productTypes where idType = '" + this.idType + "'";
+            DataTable dt = Connection.Instance.ExecuteQuery(query);
+            foreach (DataRow row in dt.Rows)
+            {
+                this.idType = row["idType"].ToString();
+                this.typeName = row["typeName"].ToString();
+            }
+            return this;
+        }
     }
 }

@@ -134,5 +134,17 @@ namespace EmmerceAPIHCMUE.Controllers
                 return new ResponseData(Constants.Instance.FAIL_CODE, e.Message.ToString(), null);
             }
         }
+        [HttpPost("find-by-id")]
+        public ResponseData FindByID([FromBody] ProductType b)
+        {
+            try
+            {
+                return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, b.FindByID());
+            }
+            catch (Exception e)
+            {
+                return new ResponseData(Constants.Instance.FAIL_CODE, e.Message.ToString(), null);
+            }
+        }
     }
 }
