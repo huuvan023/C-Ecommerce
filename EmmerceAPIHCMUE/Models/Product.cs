@@ -89,10 +89,10 @@ namespace EmmerceAPIHCMUE.Models
             query += "isSaling = '" + this.isSaling + "',";
             if (this.expiredSalingDate != null && this.expiredSalingDate != "")
             {
-                query += "expiredSalingDate = '" + this.expiredSalingDate + "'";
+                query += "expiredSalingDate = '" + this.expiredSalingDate + "',";
             }
 
-            //query = query.Remove(query.Length - 1);
+            query = query.Remove(query.Length - 1);
             query += " where idProduct = '" + this.idProduct + "'";
             int rowExec = Connection.Instance.ExecuteNonQuery(query);
             if (rowExec == 1)
