@@ -1,30 +1,43 @@
-﻿using EmmerceAPIHCMUE.Models;
-using EmmerceAPIHCMUE.Provider;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+using EmmerceAPIHCMUE.Controllers;
+using System.Web;
+using EmmerceAPIHCMUE.Models;
+using EmmerceAPIHCMUE.Provider;
+using Newtonsoft.Json;
+using System.Net.Http.Headers;
+using System.IdentityModel.Tokens.Jwt;
+using System.Net.Mail;
+using System.Net;
 
 namespace EmmerceAPIHCMUE.Controllers
 {
     [ApiController]
     [Produces("application/json")]
-    [Route("/product-color/")]
-    public class ProductColorController : ControllerBase
+    [Route("/checkout/")]
+    public class OrdersListController: ControllerBase
     {
         [HttpPost("add")]
-        public ResponseData AddProductColor([FromBody] ProductColor p)
+        public ResponseData AddCheckout([FromBody] OrdersList orders)
         {
             try
             {
                 if (Request.Headers["Authorization"] != "")
                 {
                     CustomMiddleware middleware = new CustomMiddleware(Request.Headers["Authorization"]);
-                    if (middleware.ValidateToken(Constants.Instance.ADMIN_ROLE1))
+                    if (middleware.ValidateToken(Constants.Instance.USER_ROLE1))
                     {
-                        if (p.AddProductColor())
+                        var handler = new JwtSecurityTokenHandler();
+                        var token = handler.ReadJwtToken(Request.Headers["Authorization"]);
+                        var idUser = token.Claims.Where(c => c.Type == "nameid").Select(c => c.Value).SingleOrDefault();
+                        orders.idUser = idUser;
+                        if (orders.AddCheckout())
                         {
                             return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, null);
                         }
@@ -44,19 +57,18 @@ namespace EmmerceAPIHCMUE.Controllers
             {
                 return new ResponseData(Constants.Instance.FAIL_CODE, e.Message.ToString(), null);
             }
-
         }
-        [HttpPost("delete")]
-        public ResponseData DeleteProductColor([FromBody] ProductColor p)
+        [HttpPost("update-status")]
+        public ResponseData UpdateStatus([FromBody] OrdersList orders)
         {
             try
             {
                 if (Request.Headers["Authorization"] != "")
                 {
                     CustomMiddleware middleware = new CustomMiddleware(Request.Headers["Authorization"]);
-                    if (middleware.ValidateToken(Constants.Instance.ADMIN_ROLE1))
+                    if (middleware.ValidateToken(Constants.Instance.USER_ROLE1) || middleware.ValidateToken(Constants.Instance.ADMIN_ROLE1))
                     {
-                        if (p.DeleteProductColor())
+                        if (orders.UpdateStatusCheckout())
                         {
                             return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, null);
                         }
@@ -76,23 +88,36 @@ namespace EmmerceAPIHCMUE.Controllers
             {
                 return new ResponseData(Constants.Instance.FAIL_CODE, e.Message.ToString(), null);
             }
-
         }
-        [HttpPost("update")]
-        public ResponseData UpdateProductColor([FromBody] ProductColor p)
+        [HttpPost("details")]
+        public ResponseData UpdateStatus([FromBody] OrdersDetails details)
         {
             try
             {
                 if (Request.Headers["Authorization"] != "")
                 {
                     CustomMiddleware middleware = new CustomMiddleware(Request.Headers["Authorization"]);
-                    if (middleware.ValidateToken(Constants.Instance.ADMIN_ROLE1))
+                    if (middleware.ValidateToken(Constants.Instance.USER_ROLE1) || middleware.ValidateToken(Constants.Instance.ADMIN_ROLE1))
                     {
-                        if (p.UpdateProductColor())
+                        DataTable dt = details.GetDetailsOder();
+                        OrdersList resData = new OrdersList();
+                        var handler = new JwtSecurityTokenHandler();
+                        var token = handler.ReadJwtToken(Request.Headers["Authorization"]);
+                        var idUser = token.Claims.Where(c => c.Type == "nameid").Select(c => c.Value).SingleOrDefault();
+
+                        resData.idOrder = details.idOder;
+                        resData.idUser = idUser;
+                        resData.idOrderList = "**";
+                        List<MultipleProduct> products = new List<MultipleProduct>();
+                        foreach (DataRow row in dt.Rows)
                         {
-                            return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, null);
+                            MultipleProduct a = new MultipleProduct();
+                            a.idProduct = row["idProduct"].ToString();
+                            a.quanlity = Int32.Parse(row["quanlity"].ToString());
+                            products.Add(a);
                         }
-                        return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
+                        resData.products = products;
+                        return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, resData);
                     }
                     else
                     {
@@ -103,43 +128,6 @@ namespace EmmerceAPIHCMUE.Controllers
                 {
                     return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SESSION_EXPIRED, null);
                 }
-            }
-            catch (Exception e)
-            {
-                return new ResponseData(Constants.Instance.FAIL_CODE, e.Message.ToString(), null);
-            }
-
-        }
-        [HttpGet("all")]
-        public ResponseData GetAllColor()
-        {
-            try
-            {
-
-                ProductColor p = new ProductColor();
-                DataTable dt = p.GetAllColor();
-
-                List<ProductColor> resData = new List<ProductColor>();
-                foreach (DataRow row in dt.Rows)
-                {
-                    ProductColor a = new ProductColor();
-                    a.idColor = row["idColor"].ToString();
-                    a.colorName = row["colorName"].ToString();
-                    resData.Add(a);
-                }
-                return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, resData);
-            }
-            catch (Exception e)
-            {
-                return new ResponseData(Constants.Instance.FAIL_CODE, e.Message.ToString(), null);
-            }
-        }
-        [HttpPost("find-by-id")]
-        public ResponseData FindByID([FromBody] ProductColor b)
-        {
-            try
-            {
-                return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, b.FindByID());
             }
             catch (Exception e)
             {

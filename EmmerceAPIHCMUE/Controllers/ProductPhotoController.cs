@@ -11,11 +11,11 @@ namespace EmmerceAPIHCMUE.Controllers
 {
     [ApiController]
     [Produces("application/json")]
-    [Route("/product-color/")]
-    public class ProductColorController : ControllerBase
+    [Route("/product-photo/")]
+    public class ProductPhotoController : ControllerBase
     {
         [HttpPost("add")]
-        public ResponseData AddProductColor([FromBody] ProductColor p)
+        public ResponseData AddProductPhoto([FromBody] ProductPhoto p)
         {
             try
             {
@@ -24,7 +24,7 @@ namespace EmmerceAPIHCMUE.Controllers
                     CustomMiddleware middleware = new CustomMiddleware(Request.Headers["Authorization"]);
                     if (middleware.ValidateToken(Constants.Instance.ADMIN_ROLE1))
                     {
-                        if (p.AddProductColor())
+                        if (p.AddProductPhoto())
                         {
                             return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, null);
                         }
@@ -47,7 +47,7 @@ namespace EmmerceAPIHCMUE.Controllers
 
         }
         [HttpPost("delete")]
-        public ResponseData DeleteProductColor([FromBody] ProductColor p)
+        public ResponseData DeleteProductPhoto([FromBody] ProductPhoto p)
         {
             try
             {
@@ -56,7 +56,7 @@ namespace EmmerceAPIHCMUE.Controllers
                     CustomMiddleware middleware = new CustomMiddleware(Request.Headers["Authorization"]);
                     if (middleware.ValidateToken(Constants.Instance.ADMIN_ROLE1))
                     {
-                        if (p.DeleteProductColor())
+                        if (p.DeleteProductPhoto())
                         {
                             return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, null);
                         }
@@ -79,7 +79,7 @@ namespace EmmerceAPIHCMUE.Controllers
 
         }
         [HttpPost("update")]
-        public ResponseData UpdateProductColor([FromBody] ProductColor p)
+        public ResponseData UpdateProductPhoto([FromBody] ProductPhoto p)
         {
             try
             {
@@ -88,7 +88,7 @@ namespace EmmerceAPIHCMUE.Controllers
                     CustomMiddleware middleware = new CustomMiddleware(Request.Headers["Authorization"]);
                     if (middleware.ValidateToken(Constants.Instance.ADMIN_ROLE1))
                     {
-                        if (p.UpdateProductColor())
+                        if (p.UpdateProductPhoto())
                         {
                             return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, null);
                         }
@@ -111,20 +111,22 @@ namespace EmmerceAPIHCMUE.Controllers
 
         }
         [HttpGet("all")]
-        public ResponseData GetAllColor()
+        public ResponseData GetAllPhoto()
         {
             try
             {
 
-                ProductColor p = new ProductColor();
-                DataTable dt = p.GetAllColor();
+                ProductPhoto p = new ProductPhoto();
+                DataTable dt = p.GetAllPhoto();
 
-                List<ProductColor> resData = new List<ProductColor>();
+                List<ProductPhoto> resData = new List<ProductPhoto>();
                 foreach (DataRow row in dt.Rows)
                 {
-                    ProductColor a = new ProductColor();
-                    a.idColor = row["idColor"].ToString();
-                    a.colorName = row["colorName"].ToString();
+                    ProductPhoto a = new ProductPhoto();
+                    a.idPhoto = row["idPhoto"].ToString();
+                    a.idProduct = row["idProduct"].ToString();
+                    a.link = row["link"].ToString();
+                    a.uploadedTime = row["uploadedTime"].ToString();
                     resData.Add(a);
                 }
                 return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, resData);
@@ -135,11 +137,12 @@ namespace EmmerceAPIHCMUE.Controllers
             }
         }
         [HttpPost("find-by-id")]
-        public ResponseData FindByID([FromBody] ProductColor b)
+        public ResponseData FindByID([FromBody] Product b)
         {
             try
             {
-                return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, b.FindByID());
+                ProductPhoto rs = new ProductPhoto();
+                return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, rs.FindByProductID(b.IdProduct));
             }
             catch (Exception e)
             {

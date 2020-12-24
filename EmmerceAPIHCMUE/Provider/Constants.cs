@@ -43,6 +43,10 @@ namespace EmmerceAPIHCMUE.Provider
         private string ClientID = "814891624345-k275c9gvb6nb1fn1qihrqrnrvb8nq8vr.apps.googleusercontent.com";
         private string ClientSecret = "AL7woG1O9n5hHEGsjpAHMKac";
         private string a = "1";
+        private int INITIAL_STT = 0;
+        private int RECEIVE_STT = 1;
+        private int DELIVERY_STT = 2;
+        private int COMPLETE_STT = 3;
         //đóng gói: Ctr + R + e 
         public int SUCCESS_CODE { get => sUCCESS_CODE; }
         public int FAIL_CODE { get => fAIL_CODE;  }
@@ -69,5 +73,9 @@ namespace EmmerceAPIHCMUE.Provider
         public string A { get => a;  }
         public string ADD_SUCESS1 { get => ADD_SUCESS;}
         public string DELETE_SUCESS1 { get => DELETE_SUCESS;  }
+        public int INITIAL_STT1 { get => INITIAL_STT; set => INITIAL_STT = value; }
+        public int RECEIVE_STT1 { get => RECEIVE_STT; set => RECEIVE_STT = value; }
+        public int DELIVERY_STT1 { get => DELIVERY_STT; set => DELIVERY_STT = value; }
+        public int COMPLETE_STT1 { get => COMPLETE_STT; set => COMPLETE_STT = value; }
     }
 }

@@ -50,5 +50,16 @@ namespace EmmerceAPIHCMUE.Models
             string query = "select * from dbo.productSize";
             return Connection.Instance.ExecuteQuery(query);
         }
+        public ProductSize FindByID()
+        {
+            string query = "select * from dbo.productSize where idSize = '" + this.idSize + "'";
+            DataTable dt = Connection.Instance.ExecuteQuery(query);
+            foreach (DataRow row in dt.Rows)
+            {
+                this.idSize = row["idSize"].ToString();
+                this.sizeName = row["sizeName"].ToString();
+            }
+            return this;
+        }
     }
 }

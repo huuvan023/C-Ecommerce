@@ -193,7 +193,6 @@ namespace EmmerceAPIHCMUE.Controllers
                 return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
             }
         }
-
         [HttpPost("find")]
         public ResponseData FindUser([FromBody] User s)
         {
@@ -233,6 +232,50 @@ namespace EmmerceAPIHCMUE.Controllers
             catch(Exception e)
             {
                 return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
+            }
+        }
+        [HttpGet("get-user-checkout")]
+        public ResponseData GetUserCheckout()
+        {
+            try
+            {
+                if (Request.Headers["Authorization"] != "")
+                {
+                    CustomMiddleware middleware = new CustomMiddleware(Request.Headers["Authorization"]);
+                    if (middleware.ValidateToken(Constants.Instance.USER_ROLE1))
+                    {
+                        var handler = new JwtSecurityTokenHandler();
+                        var token = handler.ReadJwtToken(Request.Headers["Authorization"]);
+                        var idUser = token.Claims.Where(c => c.Type == "nameid").Select(c => c.Value).SingleOrDefault();
+                        User user = new User();
+                        user.idUser = idUser;
+                        DataTable dt = user.getAllUserCheckout();
+                        List<OrdersDetails> resData = new List<OrdersDetails>();
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            OrdersDetails a = new OrdersDetails();
+                            a.idUser = row["idUser"].ToString();
+                            a.idOder = row["idOder"].ToString();
+                            a.date = row["date"].ToString();
+                            a.status = row["status"].ToString();
+                            a.totalPrice = row["totalPrice"].ToString();
+                            resData.Add(a);
+                        }
+                        return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SUCCESS_MESSAGE1, resData);
+                    }
+                    else
+                    {
+                        return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SESSION_EXPIRED, null);
+                    }
+                }
+                else
+                {
+                    return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SESSION_EXPIRED, null);
+                }
+            }
+            catch (Exception e)
+            {
+                return new ResponseData(Constants.Instance.FAIL_CODE, e.Message.ToString(), null);
             }
         }
     }

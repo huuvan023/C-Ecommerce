@@ -50,5 +50,16 @@ namespace EmmerceAPIHCMUE.Models
             string query = "select * from dbo.productColor";
             return Connection.Instance.ExecuteQuery(query);
         }
+        public ProductColor FindByID()
+        {
+            string query = "select * from dbo.productColor where idColor = '" + this.idColor + "'";
+            DataTable dt = Connection.Instance.ExecuteQuery(query);
+            foreach (DataRow row in dt.Rows)
+            {
+                this.idColor = row["idColor"].ToString();
+                this.colorName = row["colorName"].ToString();
+            }
+            return this;
+        }
     }
 }
