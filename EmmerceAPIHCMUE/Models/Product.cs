@@ -131,6 +131,12 @@ namespace EmmerceAPIHCMUE.Models
             return a;
         }
 
+        public DataTable GetProductByType()
+        {
+            string query = "select * from dbo.products where idType = '" + this.idType + "'";
+            return Connection.Instance.ExecuteQuery(query);
+        }
+
         public string IdProduct { get => idProduct; set => idProduct = value; }
         public string IdSize { get => idSize; set => idSize = value; }
         public string IdBrand { get => idBrand; set => idBrand = value; }
