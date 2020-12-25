@@ -97,7 +97,7 @@ namespace EmmerceAPIHCMUE.Controllers
                         a.lastLogin = row["lastLogin"].ToString();
                         a.avatar = row["avatar"].ToString();
                     }
-                    return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SUCCESS_MESSAGE1, a);
+                    return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, a);
                 }
                 return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
             }
@@ -124,7 +124,7 @@ namespace EmmerceAPIHCMUE.Controllers
                     string Body = "Xin chào " + s.email + ". Đây là mật khẩu mới của bạn là: " + randomPassword;
                     if (SMTPSendMail.Instance.SendEmail(To, Subject, Body))
                     {
-                        return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SUCCESS_MESSAGE1, "Successfully! Please check your email!");
+                        return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, "Successfully! Please check your email!");
                     }
                 }
                 return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.EMAIL_NOT_EXIST1, null);
