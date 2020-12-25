@@ -22,14 +22,16 @@ namespace EmmerceAPIHCMUE.Models
         {
             string idOder = Helper.Instance.CreateRandomPassword(10);
             int totalPrice = 0;
+
             string queryinitOrderDetail = "insert into dbo.odersDetails values('" + idOder + "','" + DateTime.UtcNow.ToString() + "','" + Constants.Instance.INITIAL_STT1 + "',0,'" + this.idUser + "')";
+
             if (Connection.Instance.ExecuteNonQuery(queryinitOrderDetail) < 1)
             {
                 return false;
             }
             foreach (MultipleProduct item in this.products)
             {
-                string query1 = "insert into odersList values('" + Helper.Instance.CreateRandomPassword(6) + "','" + idOder + "','" + item.idProduct + "', '" + item.quanlity + "')";
+                string query1 = "insert into odersList values('" + Helper.Instance.CreateRandomPassword(6) + "','" + idOder + "','" + this.idUser + "','" + item.idProduct + "', '" + item.quanlity + "')";
                 if (Connection.Instance.ExecuteNonQuery(query1) == 1)
                 {
                     string queryGetProduct = "select price from dbo.products where idProduct='" + item.idProduct + "'";
