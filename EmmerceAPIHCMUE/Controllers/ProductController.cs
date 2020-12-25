@@ -175,6 +175,39 @@ namespace EmmerceAPIHCMUE.Controllers
                 return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
             }
         }
+        [HttpPost("get-by-type")]
+        public ResponseData GetProductByType([FromBody] Product p)
+        {
+            try
+            {
+                DataTable dt = p.GetProductByType();
 
+                List<Product> resData = new List<Product>();
+                foreach (DataRow row in dt.Rows)
+                {
+                    Product a = new Product();
+                    a.IdProduct = row["idProduct"].ToString();
+                    a.IdSize = row["idSize"].ToString();
+                    a.IdBrand = row["idBrand"].ToString();
+                    a.IdColor = row["idColor"].ToString();
+                    a.IdCategory = row["idCategory"].ToString();
+                    a.IdType = row["idType"].ToString();
+                    a.Price = row["price"].ToString();
+                    a.SalePrice = row["salePrice"].ToString();
+                    a.PhotoReview = row["photoReview"].ToString();
+                    a.Detail = row["detail"].ToString();
+                    a.IsSaling = Int32.Parse(row["isSaling"].ToString());
+                    a.ExpiredSalingDate = row["expiredSalingDate"].ToString();
+                    a.DateAdded = row["dateAdded"].ToString();
+
+                    resData.Add(a);
+                }
+                return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, resData);
+            }
+            catch (Exception e)
+            {
+                return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
+            }
+        }
     }
 }
