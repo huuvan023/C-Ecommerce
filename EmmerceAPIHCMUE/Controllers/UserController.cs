@@ -139,6 +139,10 @@ namespace EmmerceAPIHCMUE.Controllers
         {
             try
             {
+                var handler = new JwtSecurityTokenHandler();
+                var token = handler.ReadJwtToken(Request.Headers["Authorization"]);
+                var idUser = token.Claims.Where(c => c.Type == "nameid").Select(c => c.Value).SingleOrDefault();
+                s.idUser = idUser;
                 if (s.UpdateUser())
                 {
                     return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.UPDATE_SUCESS1, null);

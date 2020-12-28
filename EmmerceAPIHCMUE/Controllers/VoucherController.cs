@@ -116,6 +116,33 @@ namespace EmmerceAPIHCMUE.Controllers
                 return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
             }
         }
-    
+        [HttpPost("get-voucher")]
+        public ResponseData GetVoucher([FromBody] Voucher v)
+        {
+            try
+            {
+                DataTable dt = v.GetVoucher();
+                if(dt.Rows.Count > 0)
+                {
+                    Voucher a = new Voucher();
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        a.IdVoucher = row["idVoucher"].ToString();
+                        a.Price = Int32.Parse(row["price"].ToString());
+                        a.ExpiredDate = row["expiredDate"].ToString();
+                        a.IsUse = Int32.Parse(row["isUse"].ToString());
+                    }
+                    return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, a);
+                }
+                else
+                {
+                    return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.FAIL_MESSAGE1, null);
+                }
+            }
+            catch (Exception e)
+            {
+                return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
+            }
+        }
     }
 }

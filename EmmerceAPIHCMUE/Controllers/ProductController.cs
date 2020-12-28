@@ -130,6 +130,7 @@ namespace EmmerceAPIHCMUE.Controllers
                     a.IdColor = row["idColor"].ToString();
                     a.IdCategory = row["idCategory"].ToString();
                     a.IdType = row["idType"].ToString();
+                    a.ProductName = row["productName"].ToString();
                     a.Price = row["price"].ToString();
                     a.SalePrice = row["salePrice"].ToString();
                     a.PhotoReview = row["photoReview"].ToString();
@@ -152,23 +153,9 @@ namespace EmmerceAPIHCMUE.Controllers
         {
             try
             { //idProduct
-                if (Request.Headers["Authorization"] != "")
-                {
-                    CustomMiddleware middleware = new CustomMiddleware(Request.Headers["Authorization"]);
-                    if (middleware.ValidateToken(Constants.Instance.ADMIN_ROLE1) || middleware.ValidateToken(Constants.Instance.USER_ROLE1))
-                    {
-                        Product data = p.GetProductById();
-                        return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SUCCESS_MESSAGE1, data);
-                    }
-                    else
-                    {
-                        return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SESSION_EXPIRED, null);
-                    }
-                }
-                else
-                {
-                    return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SESSION_EXPIRED, null);
-                }
+                Product data = p.GetProductById();
+                return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, data);
+
             }
             catch (Exception e)
             {
@@ -193,6 +180,7 @@ namespace EmmerceAPIHCMUE.Controllers
                     a.IdCategory = row["idCategory"].ToString();
                     a.IdType = row["idType"].ToString();
                     a.Price = row["price"].ToString();
+                    a.ProductName = row["productName"].ToString();
                     a.SalePrice = row["salePrice"].ToString();
                     a.PhotoReview = row["photoReview"].ToString();
                     a.Detail = row["detail"].ToString();
@@ -208,6 +196,60 @@ namespace EmmerceAPIHCMUE.Controllers
             {
                 return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
             }
+        }
+        [HttpGet("bestseller")]
+        public ResponseData GetBestSeller()
+        {
+            try
+            {
+                Product product = new Product();
+                DataTable dt = product.GetBestSeller();
+
+
+                List<BestSeller> response = new List<BestSeller>();
+;                foreach (DataRow row in dt.Rows)
+                {
+                    Product pr = new Product();
+                    pr.IdProduct = row[0].ToString();
+                    Product aa = pr.GetProductById();
+                    BestSeller best = new BestSeller(aa, Int32.Parse(row[1].ToString()));
+                    response.Add(best);
+                    /*
+                    Product a = new Product();
+                    a.IdProduct = row["idProduct"].ToString();
+                    a.IdSize = row["idSize"].ToString();
+                    a.IdBrand = row["idBrand"].ToString();
+                    a.IdColor = row["idColor"].ToString();
+                    a.IdCategory = row["idCategory"].ToString();
+                    a.IdType = row["idType"].ToString();
+                    a.ProductName = row["productName"].ToString();
+                    a.Price = row["price"].ToString();
+                    a.SalePrice = row["salePrice"].ToString();
+                    a.PhotoReview = row["photoReview"].ToString();
+                    a.Detail = row["detail"].ToString();
+                    a.IsSaling = Int32.Parse(row["isSaling"].ToString());
+                    a.ExpiredSalingDate = row["expiredSalingDate"].ToString();
+                    a.DateAdded = row["dateAdded"].ToString();
+
+                    resData.Add(a);*/
+                }
+                return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, response);
+            }
+            catch (Exception e)
+            {
+                return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
+            }
+        }
+    }
+    class BestSeller
+    {
+        public Product product { get; set; }
+        public int popular { get; set; }
+
+        public BestSeller(Product p, int popular)
+        {
+            this.product = p;
+            this.popular = popular;
         }
     }
 }

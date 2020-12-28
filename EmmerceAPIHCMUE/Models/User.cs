@@ -69,11 +69,11 @@ namespace EmmerceAPIHCMUE.Models
             }
             if (this.firstName != null && this.firstName != "")
             {
-                query += "firstName = '" + this.firstName + "',";
+                query += "firstName = N'" + this.firstName + "',";
             }
             if (this.lastName != null && this.lastName != "")
             {
-                query += "lastName = '" + this.lastName + "',";
+                query += "lastName = N'" + this.lastName + "',";
             }
             if (this.birthday != null && this.birthday != "")
             {
@@ -101,7 +101,7 @@ namespace EmmerceAPIHCMUE.Models
             }
             if (this.avatar != null && this.avatar != "")
             {
-                query += "avatar = '" + this.avatar + "'";
+                query += "avatar = '" + this.avatar + "',";
             }
             query = query.Remove(query.Length - 1);
             query += " where idUser = '" + this.idUser + "'";

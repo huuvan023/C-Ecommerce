@@ -16,6 +16,7 @@ namespace EmmerceAPIHCMUE.Models
         private string idCategory;
         private string idType;
         private string price;
+        private string productName;
         private string salePrice;
         private string photoReview;
         private string detail;
@@ -122,6 +123,7 @@ namespace EmmerceAPIHCMUE.Models
                 a.idType = row["idType"].ToString();
                 a.price = row["price"].ToString();
                 a.salePrice = row["salePrice"].ToString();
+                a.ProductName = row["productName"].ToString();
                 a.photoReview = row["photoReview"].ToString();
                 a.detail = row["detail"].ToString();
                 a.isSaling = Int32.Parse(row["isSaling"].ToString());
@@ -134,6 +136,11 @@ namespace EmmerceAPIHCMUE.Models
         public DataTable GetProductByType()
         {
             string query = "select * from dbo.products where idType = '" + this.idType + "'";
+            return Connection.Instance.ExecuteQuery(query);
+        }
+        public DataTable GetBestSeller()
+        {
+            string query = "select idProduct,count(*) from dbo.odersList group by idProduct";
             return Connection.Instance.ExecuteQuery(query);
         }
         public string IdProduct { get => idProduct; set => idProduct = value; }
@@ -149,5 +156,6 @@ namespace EmmerceAPIHCMUE.Models
         public int IsSaling { get => isSaling; set => isSaling = value; }
         public string ExpiredSalingDate { get => expiredSalingDate; set => expiredSalingDate = value; }
         public string DateAdded { get => dateAdded; set => dateAdded = value; }
+        public string ProductName { get => productName; set => productName = value; }
     }
 }

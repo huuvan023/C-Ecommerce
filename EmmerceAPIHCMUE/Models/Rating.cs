@@ -26,7 +26,11 @@ namespace EmmerceAPIHCMUE.Models
             }
             return false;
         }
-
+        public DataTable getByID()
+        {
+            string query = "select * from dbo.rating where idProduct ='"+this.idProduct+"'";
+            return Connection.Instance.ExecuteQuery(query);
+        }
         public bool DeleteRating()
         {
             string query = "delete from dbo.rating where idProduct='" + this.idProduct + "' and idUser='" + this.idUser + "'";

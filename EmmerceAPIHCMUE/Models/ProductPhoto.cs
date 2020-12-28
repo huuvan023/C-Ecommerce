@@ -63,7 +63,6 @@ namespace EmmerceAPIHCMUE.Models
             foreach (DataRow row in dt.Rows)
             {
                 ProductPhoto a = new ProductPhoto();
-                a.idPhoto = row["idPhoto"].ToString();
                 a.idProduct = row["idProduct"].ToString();
                 a.link = row["link"].ToString();
                 a.uploadedTime = row["uploadedTime"].ToString();

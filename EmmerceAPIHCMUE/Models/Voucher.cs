@@ -42,6 +42,11 @@ namespace EmmerceAPIHCMUE.Models
             string query = "select * from dbo.vouchers";
             return Connection.Instance.ExecuteQuery(query);
         }
+        public DataTable GetVoucher()
+        {
+            string query = "select * from dbo.vouchers where idVoucher = '"+this.idVoucher+"'";
+            return Connection.Instance.ExecuteQuery(query);
+        }
 
         public string IdVoucher { get => idVoucher; set => idVoucher = value; }
         public int Price { get => price; set => price = value; }
