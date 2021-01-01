@@ -101,7 +101,7 @@ namespace EmmerceAPIHCMUE.Models
       }
       if (this.avatar != null && this.avatar != "")
       {
-        query += "avatar = '" + this.avatar + "'";
+        query += "avatar = '" + this.avatar + "',";
       }
       query = query.Remove(query.Length - 1);
       query += " where idUser = '" + this.idUser + "'";
@@ -204,7 +204,12 @@ namespace EmmerceAPIHCMUE.Models
     }
     public DataTable getAllUserCheckout()
     {
-      string query = "select * from dbo.odersDetails where idUser = '" + this.idUser + "'";
+      string query = "select * from dbo.odersList where idUser = '" + this.idUser + "'";
+      return Connection.Instance.ExecuteQuery(query);
+    }
+    public DataTable getProductByOrder(string idOrderList)
+    {
+      string query = "select * from dbo.odersDetails where idOrderList = '" + idOrderList   + "'";
       return Connection.Instance.ExecuteQuery(query);
     }
   }

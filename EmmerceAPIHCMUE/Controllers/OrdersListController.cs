@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -100,24 +100,17 @@ namespace EmmerceAPIHCMUE.Controllers
                     if (middleware.ValidateToken(Constants.Instance.USER_ROLE1) || middleware.ValidateToken(Constants.Instance.ADMIN_ROLE1))
                     {
                         DataTable dt = details.GetDetailsOder();
-                        OrdersList resData = new OrdersList();
-                        var handler = new JwtSecurityTokenHandler();
-                        var token = handler.ReadJwtToken(Request.Headers["Authorization"]);
-                        var idUser = token.Claims.Where(c => c.Type == "nameid").Select(c => c.Value).SingleOrDefault();
-
-                        resData.idOrder = details.idOder;
-                        resData.idUser = idUser;
-                        resData.idOrderList = "**";
-                        List<MultipleProduct> products = new List<MultipleProduct>();
+                        List<OrdersDetails> od = new List<OrdersDetails>();
                         foreach (DataRow row in dt.Rows)
                         {
-                            MultipleProduct a = new MultipleProduct();
-                            a.idProduct = row["idProduct"].ToString();
-                            a.quanlity = Int32.Parse(row["quanlity"].ToString());
-                            products.Add(a);
+                          OrdersDetails res = new OrdersDetails();
+                          res.idOrderList = row["idOrderList"].ToString();
+                          res.idOder = row["idOder"].ToString();
+                          res.idProduct = row["idProduct"].ToString();
+                          res.quanlity = row["quality"].ToString();
+                          od.Add(res);
                         }
-                        resData.products = products;
-                        return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, resData);
+                        return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, od);
                     }
                     else
                     {

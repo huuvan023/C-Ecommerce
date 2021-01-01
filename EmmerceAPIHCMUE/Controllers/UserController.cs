@@ -281,18 +281,33 @@ namespace EmmerceAPIHCMUE.Controllers
                         User user = new User();
                         user.idUser = idUser;
                         DataTable dt = user.getAllUserCheckout();
-                        List<OrdersDetails> resData = new List<OrdersDetails>();
+
+                        List<UserCheckout> r = new List<UserCheckout>();
                         foreach (DataRow row in dt.Rows)
                         {
-                            OrdersDetails a = new OrdersDetails();
-                            a.idUser = row["idUser"].ToString();
-                            a.idOder = row["idOder"].ToString();
-                            a.date = row["date"].ToString();
-                            a.status = row["status"].ToString();
-                            a.totalPrice = row["totalPrice"].ToString();
-                            resData.Add(a);
+                            UserCheckout res = new UserCheckout();
+                            res.idOrderList = row["idOrderList"].ToString();
+                            res.idUser = row["idUser"].ToString();
+                            res.status = row["status"].ToString();
+                            res.date = row["date"].ToString();
+                            res.idVoucher = row["idVoucher"].ToString();
+                            res.totalPrice = row["totalPrice"].ToString();
+                            string idOdersList = row["idOrderList"].ToString();
+                            DataTable item = user.getProductByOrder(idOdersList);
+                            List<Odersss> o = new List<Odersss>();
+                            foreach (DataRow localRow in item.Rows)
+                            {
+                              Odersss od = new Odersss();
+                              od.idOder = row[0].ToString();
+                              od.idOrderList = row[1].ToString();
+                              od.idProduct = row[2].ToString();
+                              od.quanlity = row[3].ToString();
+                              o.Add(od);
+                            }
+                            res.products = o;
+                            r.Add(res);
                         }
-                        return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SUCCESS_MESSAGE1, resData);
+                        return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, r);
                     }
                     else
                     {
@@ -310,4 +325,32 @@ namespace EmmerceAPIHCMUE.Controllers
             }
         }
     }
+  class UserCheckout
+  {
+    private string IdOrderList;
+    private string IdUser;
+    private string Status;
+    private string Date;
+    private string IdVoucher;
+    private string TotalPrice;
+    private List<Odersss> Products;
+    public string idOrderList { get => IdOrderList; set => IdOrderList = value; }
+    public string idUser { get => IdUser; set => IdUser = value; }
+    public string status { get => Status; set => Status = value; }
+    public string date { get => Date; set => Date = value; }
+    public string idVoucher { get => IdVoucher; set => IdVoucher = value; }
+    public string totalPrice { get => TotalPrice; set => TotalPrice = value; }
+    internal List<Odersss> products { get => Products; set => Products = value; }
+  }
+  class Odersss
+  {
+    private string IdOder;
+    private string IdOrderList;
+    private string IdProduct;
+    private string Quanlity;
+    public string idOder { get => IdOder; set => IdOder = value; }
+    public string idOrderList { get => IdOrderList; set => IdOrderList = value; }
+    public string idProduct { get => IdProduct; set => IdProduct = value; }
+    public string quanlity { get => Quanlity; set => Quanlity = value; }
+  }
 }

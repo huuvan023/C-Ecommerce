@@ -1,4 +1,4 @@
-﻿using EmmerceAPIHCMUE.Provider;
+using EmmerceAPIHCMUE.Provider;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,7 +18,7 @@ namespace EmmerceAPIHCMUE.Models
         DateTime now = DateTime.Now;
         public bool AddRating()
         {
-            string query = "insert into dbo.rating values('" + this.idUser + "','" + this.idProduct + "','" + this.rate + "',N'" + this.comment + "','" + now.ToString("yyyy-MM-dd HH:mm:ss") + "')";
+            string query = "insert into dbo.rating values('"+Helper.Instance.CreateRandomPassword(3)+"','" + this.idUser + "','" + this.idProduct + "',N'" + this.comment + "','" + now.ToString("yyyy-MM-dd HH:mm:ss") + "','" + this.rate + "')";
             int rowExec = Connection.Instance.ExecuteNonQuery(query);
             if (rowExec == 1)
             {
