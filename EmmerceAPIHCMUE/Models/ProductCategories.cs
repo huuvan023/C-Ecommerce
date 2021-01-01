@@ -1,4 +1,4 @@
-﻿using EmmerceAPIHCMUE.Provider;
+using EmmerceAPIHCMUE.Provider;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,7 +17,7 @@ namespace EmmerceAPIHCMUE.Models
 
         public bool AddProductCategory()
         {
-            string query = "insert into dbo.productCategories values('" + this.idCategory + "','" + this.categoryName + "')";
+            string query = "insert into dbo.productCategory values('" + this.idCategory + "','" + this.categoryName + "')";
             int rowExec = Connection.Instance.ExecuteNonQuery(query);
             if (rowExec == 1)
             {
@@ -27,7 +27,7 @@ namespace EmmerceAPIHCMUE.Models
         }
         public bool DeleteProductCategory()
         {
-            string query = "delete from dbo.productCategories where idCategory = '" + this.idCategory + "'";
+            string query = "delete from dbo.productCategory where idCategory = '" + this.idCategory + "'";
             int rowExec = Connection.Instance.ExecuteNonQuery(query);
             if (rowExec == 1)
             {
@@ -37,7 +37,7 @@ namespace EmmerceAPIHCMUE.Models
         }
         public bool UpdateProductCategory()
         {
-            string query = "update dbo.productCategories set categoryName = '" + this.categoryName + "' where idCategory = '" + this.idCategory + "'";
+            string query = "update dbo.productCategory set categoryName = '" + this.categoryName + "' where idCategory = '" + this.idCategory + "'";
             int rowExec = Connection.Instance.ExecuteNonQuery(query);
             if (rowExec == 1)
             {
@@ -47,12 +47,12 @@ namespace EmmerceAPIHCMUE.Models
         }
         public DataTable GetAllCaregory()
         {
-            string query = "select * from dbo.productCategories";
+            string query = "select * from dbo.productCategory";
             return Connection.Instance.ExecuteQuery(query);
         }
         public ProductCategories FindByID()
         {
-            string query = "select * from dbo.productCategories where idCategory = '" + this.idCategory + "'";
+            string query = "select * from dbo.productCategory where idCategory = '" + this.idCategory + "'";
             DataTable dt = Connection.Instance.ExecuteQuery(query);
             foreach (DataRow row in dt.Rows)
             {

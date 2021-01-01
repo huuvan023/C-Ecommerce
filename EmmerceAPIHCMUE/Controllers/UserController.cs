@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -238,7 +238,34 @@ namespace EmmerceAPIHCMUE.Controllers
                 return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
             }
         }
-        [HttpGet("get-user-checkout")]
+    [HttpPost("change-password")]
+    public ResponseData ChangePassword([FromBody] User s)
+    {
+      try
+      {
+        if (Request.Headers["Authorization"] != "" && Helper.Instance.ValidateCurrentToken(Request.Headers["Authorization"]))
+        {
+          var handler = new JwtSecurityTokenHandler();
+          var token = handler.ReadJwtToken(Request.Headers["Authorization"]);
+          var idUser = token.Claims.Where(c => c.Type == "nameid").Select(c => c.Value).SingleOrDefault();
+          s.idUser = idUser;
+          if (s.ChangePassword())
+          {
+            return new ResponseData(Constants.Instance.SUCCESS_CODE, Constants.Instance.SUCCESS_MESSAGE1, null);
+          }
+          else
+          {
+            return new ResponseData(Constants.Instance.FAIL_CODE, "Incorrect password!", null);
+          }
+        }
+        return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SESSION_EXPIRED, null);
+      }
+      catch (Exception e)
+      {
+        return new ResponseData(Constants.Instance.FAIL_CODE, Constants.Instance.SOMETHING_WAS_WRONG, null);
+      }
+    }
+    [HttpGet("get-user-checkout")]
         public ResponseData GetUserCheckout()
         {
             try

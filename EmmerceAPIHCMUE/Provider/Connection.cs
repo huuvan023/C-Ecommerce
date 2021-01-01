@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,7 +9,7 @@ namespace EmmerceAPIHCMUE.Provider
 {
     public class Connection
     {
-        private const string V = "Data Source=.\\SQLEXPRESS;Initial Catalog=ecommerce;Integrated Security=True";
+        private const string V = "Data Source=.\\SQLEXPRESS;Initial Catalog=ecommerceHCMUE;Integrated Security=True";
         private static Connection instance;
         private string ConnSQL = V;
 
