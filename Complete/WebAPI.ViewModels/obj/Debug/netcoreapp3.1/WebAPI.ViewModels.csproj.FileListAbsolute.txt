@@ -1,0 +1,23 @@
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.ViewModels\bin\Debug\netcoreapp3.1\WebAPI.ViewModels.deps.json
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.ViewModels\bin\Debug\netcoreapp3.1\WebAPI.ViewModels.dll
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.ViewModels\bin\Debug\netcoreapp3.1\WebAPI.ViewModels.pdb
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.csprojAssemblyReference.cache
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.AssemblyInfoInputs.cache
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.AssemblyInfo.cs
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.dll
+C:\Users\Truong08\source\repos\WebAPI-view-bag-user\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.pdb
+C:\Users\Truong08\Desktop\New folder\WebAPI.ViewModels\bin\Debug\netcoreapp3.1\WebAPI.ViewModels.deps.json
+C:\Users\Truong08\Desktop\New folder\WebAPI.ViewModels\bin\Debug\netcoreapp3.1\WebAPI.ViewModels.dll
+C:\Users\Truong08\Desktop\New folder\WebAPI.ViewModels\bin\Debug\netcoreapp3.1\WebAPI.ViewModels.pdb
+C:\Users\Truong08\Desktop\New folder\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.csprojAssemblyReference.cache
+C:\Users\Truong08\Desktop\New folder\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.AssemblyInfoInputs.cache
+C:\Users\Truong08\Desktop\New folder\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.AssemblyInfo.cs
+C:\Users\Truong08\Desktop\New folder\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\Truong08\Desktop\New folder\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.dll
+C:\Users\Truong08\Desktop\New folder\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.pdb
+C:\Users\Truong08\Desktop\New folder\WebAPI.ViewModels\bin\Debug\netcoreapp3.1\WebAPI.Data.dll
+C:\Users\Truong08\Desktop\New folder\WebAPI.ViewModels\bin\Debug\netcoreapp3.1\WebAPI.Utilities.dll
+C:\Users\Truong08\Desktop\New folder\WebAPI.ViewModels\bin\Debug\netcoreapp3.1\WebAPI.Data.pdb
+C:\Users\Truong08\Desktop\New folder\WebAPI.ViewModels\bin\Debug\netcoreapp3.1\WebAPI.Utilities.pdb
+C:\Users\Truong08\Desktop\New folder\WebAPI.ViewModels\obj\Debug\netcoreapp3.1\WebAPI.ViewModels.csproj.CopyComplete
