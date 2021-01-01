@@ -1,0 +1,98 @@
+﻿@model IEnumerable<WebAPI.ViewModels.Orders.OrderDetailsVm>
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
+    @{
+    ViewData["Title"] = "Chi tiết ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <h1 class="mt-4">Chi tiết danh mục</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+        <li class="breadcrumb-item active">Chi tiết</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header">
+            <a class="btn btn-success" asp-action="Index" asp-controller="Order">Về danh sách</a>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                Mã Order List
+                            </th>
+                            <th>
+                                Mã Order
+                            </th>
+                            <th>
+                                Ma San pham
+                            </th>
+                            <th>
+                                So luong san pham
+                            </th>
+                            <th>
+                                Ảnh sản phẩm
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @item.idOrderList
+                                </td>
+                                <td>
+                                    @item.idOder
+                                </td>
+                                <td>
+                                    @item.idProduct
+                                </td>
+                                <td>
+                                    @item.quatity
+                                </td>
+                                <td>
+                                    <a href="@(Configuration["BaseAddress"] + item.photoReview)" title="@item.idProduct">
+                                        <img src="@(Configuration["BaseAddress"] + item.photoReview)" style="width:40%" alt="@item.idProduct" />
+                                    </a>
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
